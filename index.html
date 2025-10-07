@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script data-relyance-consent-appId="app-e4574582-c94f-5f29-96f8-a5581403fd81" src="https://consent.app.relyancestage.xyz/relyance-agent.js"></script>
-  
+  <script data-relyance-consent-appId="app-65870c7a-2886-573e-8f85-ad2c91d70e56" src="https://consent.app.relyancestage.xyz/relyance-agent.js"></script>
   <title>Welcome to RelyanceAI</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,30 +62,37 @@
   </div>
 
   <script>
-    // Internal use only: tracking technologies by site
+    // Internal use only: tracking technologies and website URLs
     const trackingTechnologies = {
-      flipkart: [
-        "Google Analytics — traffic & behavior analytics",
-        "Facebook Pixel — ad targeting & conversion tracking",
-        "Hotjar — session recordings & heatmaps",
-        "Adobe Audience Manager — audience segmentation"
-      ],
-      myntra: [
-        "Google Ads Conversion Tracking — measure ad performance",
-        "Facebook Pixel — remarketing & conversions",
-        "Criteo — dynamic retargeting",
-        "Mixpanel — product analytics & funnels"
-      ],
-      amazon: [
-        "Amazon Advertising (first-party) — recommendation & ad delivery",
-        "Google Ads / DoubleClick — display advertising",
-        "Amazon DSP — programmatic ad placements",
-        "Proprietary telemetry — personalization & recommendations"
-      ]
+      flipkart: {
+        url: "https://www.flipkart.com",
+        technologies: [
+          "Google Analytics — traffic & behavior analytics",
+          "Facebook Pixel — ad targeting & conversion tracking",
+          "Hotjar — session recordings & heatmaps",
+          "Adobe Audience Manager — audience segmentation"
+        ]
+      },
+      myntra: {
+        url: "https://www.myntra.com",
+        technologies: [
+          "Google Ads Conversion Tracking — measure ad performance",
+          "Facebook Pixel — remarketing & conversions",
+          "Criteo — dynamic retargeting",
+          "Mixpanel — product analytics & funnels"
+        ]
+      },
+      amazon: {
+        url: "https://www.amazon.in",
+        technologies: [
+          "Amazon Advertising (first-party) — recommendation & ad delivery",
+          "Google Ads / DoubleClick — display advertising",
+          "Amazon DSP — programmatic ad placements",
+          "Proprietary telemetry — personalization & recommendations"
+        ]
+      }
     };
 
-    // Example use: log to console
-    console.log("Tracking technologies by site:", trackingTechnologies);
-  </script>
-</body>
-</html>
+    // Example: log one site's data
+    console.log("Tracking technologies for Flipkart:", trackingTechnologies.flipkart);
+    console.log("Tracking

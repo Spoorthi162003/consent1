@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script data-relyance-consent-appId="app-65870c7a-2886-573e-8f85-ad2c91d70e56" src="https://consent.app.relyancestage.xyz/relyance-agent.js"></script>
+  <title>Welcome to RelyanceAI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: #87CEFA; /* light sky blue */
+      min-height: 100vh;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+    }
+    .welcome-title {
+      font-size: 3em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-top: 80px;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 1.5em;
+      color: #CFEFFD;
+      margin-bottom: 32px;
+    }
+    .logo {
+      width: 78px;
+      height: 78px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px auto;
+      font-size: 2.2em;
+      color: #0EA5E9;
+      box-shadow: 0 4px 24px #0003;
+    }
+    /* Cookie banner styles */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      background: #111;
+      color: #fff;
+      padding: 38px 25px 30px 25px;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
+      font-family: inherit;
+      z-index: 9999;
+    }
+    #banner-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+    #banner-desc {
+      font-size: 1.11em;
+      margin-bottom: 26px;
+    }
+    .banner-btn-group {
+      display: flex;
+      gap: 16px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .banner-btn {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 1.05em;
+      padding: 10px 14px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    /* Tracking technologies panel */
+    #tracking-panel {
+      background: #0A2540;
+      color: #fff;
+      padding: 28px 20px;
+      margin: 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+      max-width: 1000px;
+    }
+    #tracking-panel h2 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 1.4em;
+    }
+    .site-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .site-card {
+      background: rgba(255,255,255,0.04);
+      padding: 16px;
+      border-radius: 8px;
+      flex: 1 1 280px;
+      min-width: 240px;
+    }
+    .site-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.05em;
+    }
+    .site-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #E6F7FF;
+    }
+    .site-card li {
+      margin-bottom: 6px;
+      font-size: 0.98em;
+    }
+
+    @media (max-width: 600px) {
+      .welcome-title { font-size: 2rem; margin-top: 40px; }
+      .subtitle { font-size: 1.1rem; }
+      #cookie-banner { padding: 22px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="logo">RAI</div>
+    <div class="welcome-title">Welcome to Relyance AI</div>
+    <div class="subtitle">Consent Management.</div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner">
+    <div id="banner-title">Use of Tracking Technologies</div>
+    <div id="banner-desc">
+      We use cookies and similar technologies to enhance your browsing experience and analyze site traffic.
+      By continuing to use our site, you consent to our use of cookies.
+    </div>
+    <div class="banner-btn-group">
+      <button class="banner-btn" onclick="managePreferences()">Manage Preferences</button>
+      <button class="banner-btn" onclick="accept()">Accept</button>
+      <button class="banner-btn" onclick="doNotSell()">Do not Sell or Share My Personal Information</button>
+    </div>
+  </div>
+
+  <!-- Simulated Tracking Technologies List for 3 Websites -->
+  <div id="tracking-panel" aria-live="polite">
+    <h2>Example Tracking Technologies Used by Popular E‑commerce Sites</h2>
+
+    <div class="site-row">
+      <div class="site-card" id="flipkart">
+        <h3>🔷 Flipkart</h3>
+        <ul>
+          <li>Google Analytics — traffic & behavior analytics</li>
+          <li>Facebook Pixel — ad targeting & conversion tracking</li>
+          <li>Hotjar — session recordings & heatmaps</li>
+          <li>Adobe Audience Manager — audience segmentation</li>
+        </ul>
+      </div>
+
+      <div class="site-card" id="myntra">
+        <h3>🔶 Myntra</h3>
+        <ul>
+          <li>Google Ads Conversion Tracking — measure ad performance</li>
+          <li>Facebook Pixel — remarketing & conversions</li>
+          <li>Criteo — dynamic retargeting</li>
+          <li>Mixpanel — product analytics & funnels</li>
+        </ul>
+      </div>
+
+      <div class="site-card" id="amazon">
+        <h3>🟠 Amazon</h3>
+        <ul>
+          <li>Amazon Advertising (first-party) — recommendation & ad delivery</li>
+          <li>Google Ads / DoubleClick — display advertising</li>
+          <li>Amazon DSP — programmatic ad placements</li>
+          <li>Proprietary telemetry — personalization & recommendations</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="opacity:0.9; margin-top:6px; font-size:0.95em;">
+      Note: This list is a simulation for demonstration purposes and shows common types of tracking technologies such sites may use.
+    </p>
+  </div>
+
+  <script>
+    function managePreferences() {
+      alert('Preference management coming soon!');
+    }
+    function accept() {
+      alert('Cookies Accepted');
+      // optionally hide banner after accept
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.style.display = 'none';
+    }
+    function doNotSell() {
+      alert('Your preference to not sell/share personal information has been noted.');
+      // optionally hide banner after setting preference
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

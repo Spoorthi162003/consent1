@@ -1,99 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script data-relyance-consent-appId="app-dcb9ced0-72cc-5358-af11-6882e9ce2ecb" src="https://consent.app.relyancestage.xyz/relyance-agent.js"></script>></script>
-  <title>Welcome to RelyanceAI</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-      background: #87CEFA; /* light sky blue */
-      min-height: 100vh;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    .main-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 80vh;
-      text-align: center;
-    }
-    .welcome-title {
-      font-size: 3em;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-top: 80px;
-      margin-bottom: 10px;
-    }
-    .subtitle {
-      font-size: 1.5em;
-      color: #CFEFFD;
-      margin-bottom: 32px;
-    }
-    .logo {
-      width: 78px;
-      height: 78px;
-      background: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px auto;
-      font-size: 2.2em;
-      color: #0EA5E9;
-      box-shadow: 0 4px 24px #0003;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Analytics Playground</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 
-    @media (max-width: 600px) {
-      .welcome-title { font-size: 2rem; margin-top: 40px; }
-      .subtitle { font-size: 1.1rem; }
-    }
-  </style>
+    <!--
+        ====================================================
+        START: UNBLOCKED TRACKERS FOR TESTING (Not GDPR safe)
+        Replace with real IDs if testing in production.
+        ====================================================
+    -->
+
+    <!-- 1. Hotjar Tracking Code -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid: 1234567, hjsv:6}; // Replace with your Hotjar ID
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <!-- 2. Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "your-clarity-id"); // Replace with your Clarity ID
+    </script>
+
+    <!-- 3. TikTok Pixel -->
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t;
+            var ttq = w[t] = w[t] || [];
+            ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"];
+            ttq.setAndDefer = function (t, e) {
+                t[e] = function () {
+                    t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+            };
+            for (var i = 0; i < ttq.methods.length; i++) {
+                ttq.setAndDefer(ttq, ttq.methods[i])
+            }
+            ttq.instance = function (t) {
+                var e = ttq._i[t] || [];
+                for (var n = 0; n < ttq.methods.length; n++) {
+                    ttq.setAndDefer(e, ttq.methods[n])
+                }
+                return e
+            };
+            ttq.load = function (e, n) {
+                var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                ttq._i = ttq._i || {};
+                ttq._i[e] = [];
+                ttq._i[e]._u = i;
+                ttq._t = ttq._t || {};
+                ttq._t[e] = +new Date();
+                ttq._o = ttq._o || {};
+                ttq._o[e] = n || {};
+                var o = document.createElement("script");
+                o.type = "text/javascript";
+                o.async = true;
+                o.src = i + "?sdkid=" + e + "&lib=" + t;
+                var a = document.getElementsByTagName("script")[0];
+                a.parentNode.insertBefore(o, a)
+            };
+            ttq.load('YOUR-TIKTOK-PIXEL-ID'); // Replace with your TikTok Pixel ID
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+
+    <!--
+        ===============================================
+        END: TRACKING SCRIPTS
+        ===============================================
+    -->
 </head>
-<body>
-  <div class="main-container">
-    <div class="logo">RAI</div>
-    <div class="welcome-title">Welcome to Relyance AI</div>
-    <div class="subtitle">
-    <a href="https://www.amazon.com" > https://consent1-3x1e.vercel.app/</a> </div>
-  </div>
+<body class="bg-slate-50 min-h-screen p-6 sm:p-10">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8 sm:p-12 border-t-4 border-pink-500">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-pink-600 tracking-tight">
+                Marketing Analytics Playground 📊
+            </h1>
+            <p class="mt-3 text-gray-600 text-lg">
+                This sandbox page is designed to test various analytics and tracking integrations.
+            </p>
+        </header>
 
-  <script>
-    // Internal use only: tracking technologies and website URLs
-    const trackingTechnologies = {
-      flipkart: {
-        url: "https://www.flipkart.com",
-        technologies: [
-          "Google Analytics — traffic & behavior analytics",
-          "Facebook Pixel — ad targeting & conversion tracking",
-          "Hotjar — session recordings & heatmaps",
-          "Adobe Audience Manager — audience segmentation"
-        ]
-      },
-      myntra: {
-        url: "https://www.myntra.com",
-        technologies: [
-          "Google Ads Conversion Tracking — measure ad performance",
-          "Facebook Pixel — remarketing & conversions",
-          "Criteo — dynamic retargeting",
-          "Mixpanel — product analytics & funnels"
-        ]
-      },
-      amazon: {
-        url: "https://www.amazon.in",
-        technologies: [
-          "Amazon Advertising (first-party) — recommendation & ad delivery",
-          "Google Ads / DoubleClick — display advertising",
-          "Amazon DSP — programmatic ad placements",
-          "Proprietary telemetry — personalization & recommendations"
-        ]
-      }
-    };
+        <section class="mb-10 p-6 bg-pink-50 rounded-lg border border-pink-200">
+            <h2 class="text-2xl font-semibold text-pink-700 mb-4">Active Tracking Technologies:</h2>
+            <div class="space-y-4">
+                <!-- Hotjar -->
+                <div class="flex items-center p-3 bg-white rounded-lg shadow-sm">
+                    <span class="text-xl mr-3 text-orange-500">🔥</span>
+                    <div>
+                        <p class="font-bold text-gray-800">1. Hotjar</p>
+                        <p class="text-sm text-gray-500">Used for session recordings, heatmaps, and feedback polls.</p>
+                        <code class="text-xs bg-gray-100 p-1 rounded">ID: 1234567</code>
+                    </div>
+                </div>
+                <!-- Microsoft Clarity -->
+                <div class="flex items-center p-3 bg-white rounded-lg shadow-sm">
+                    <span class="text-xl mr-3 text-blue-500">🧠</span>
+                    <div>
+                        <p class="font-bold text-gray-800">2. Microsoft Clarity</p>
+                        <p class="text-sm text-gray-500">Visualizes user behavior and detects engagement bottlenecks.</p>
+                        <code class="text-xs bg-gray-100 p-1 rounded">ID: your-clarity-id</code>
+                    </div>
+                </div>
+                <!-- TikTok Pixel -->
+                <div class="flex items-center p-3 bg-white rounded-lg shadow-sm">
+                    <span class="text-xl mr-3 text-black">🎵</span>
+                    <div>
+                        <p class="font-bold text-gray-800">3. TikTok Pixel</p>
+                        <p class="text-sm text-gray-500">Used to measure ad performance and optimize campaigns.</p>
+                        <code class="text-xs bg-gray-100 p-1 rounded">ID: YOUR-TIKTOK-PIXEL-ID</code>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // Example: log one site's data
-    console.log("Tracking technologies for Flipkart:", trackingTechnologies.flipkart);
-    console.log("Tracking
+        <section class="p-6 bg-yellow-50 rounded-lg border border-yellow-200">
+            <h2 class="text-2xl font-semibold text-yellow-800 mb-4">How to Validate These Trackers:</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li><strong class="text-orange-500">Hotjar:</strong> Use the Hotjar Chrome extension or check for network requests to `hotjar.com`.</li>
+                <li><strong class="text-blue-500">Clarity:</strong> Look for `clarity.ms` in the browser's developer tools or dashboard at clarity.microsoft.com.</li>
+                <li><strong class="text-black">TikTok:</strong> Use the TikTok Pixel Helper extension or monitor `analytics.tiktok.com` network requests.</li>
+                <li>Use DevTools (F12) > Network tab > Filter by domain to verify each tracker is firing.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
